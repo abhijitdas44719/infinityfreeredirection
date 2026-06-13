@@ -2,13 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=https://timetrek1.infinityfreeapp.com">
-<title>Redirecting</title>
-
 <script>
-window.location.replace("https://timetrek1.infinityfreeapp.com");
-</script>
+const path = window.location.pathname.split('/').pop();
 
+window.location.href =
+"https://timetrek1.infinityfreeapp.com/product.php?slug=" + encodeURIComponent(path);
+</script>
 </head>
 <body>
 Redirecting...
