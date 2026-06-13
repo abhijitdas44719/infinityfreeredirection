@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<script>
-const path = window.location.pathname.split('/').pop();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
 
-window.location.href =
-"https://timetrek1.infinityfreeapp.com/product.php?slug=" + encodeURIComponent(path);
-</script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get("slug");
+
+        if (slug) {
+            window.location.replace(
+                "https://timetrek1.infinityfreeapp.com/product.php?slug=" +
+                encodeURIComponent(slug)
+            );
+        } else {
+            window.location.replace("https://timetrek1.infinityfreeapp.com");
+        }
+    </script>
 </head>
 <body>
-Redirecting...
+    Redirecting...
 </body>
 </html>
